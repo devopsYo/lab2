@@ -23,11 +23,14 @@ const getUpperName = name => {
   return 'Foreign' 
 }
 
+//const color = 'classRedExemple';
+const color = 'classBlueExemple';
+
 const name = 'Yossef';
 
 function App() {
   return (
-    <div>
+    <div className={color}>
       {firstName == "Yossef" ? <Welcome coco={getUpperName(name)} dodo='by'/> : 'By'}
       {posts.map((post, index) => 
          <Welcome key={index} coco={post.id} dodo={index} />
