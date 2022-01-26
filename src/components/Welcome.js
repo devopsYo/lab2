@@ -1,16 +1,21 @@
-import React from 'react'
+import PropTypes from 'prop-types'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-
-  
-const name = 'David'
-
-
-const Welcome = ({coco, dodo}) => {
+const Welcome = ({name, question}) => {
     return (
         <div>
-            Welcome, {coco} + {dodo}
+            Welcome {name} , {question}
+            <FontAwesomeIcon icon={['fab', 'microsoft']} />
         </div>
     )
+}
+
+Welcome.defaultProps = {
+    name: 'Chlomo Ben David'
+}
+
+Welcome.propTypes = {
+    name: PropTypes.string
 }
 
 export {Welcome} 

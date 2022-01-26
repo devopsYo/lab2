@@ -1,4 +1,5 @@
 import {Welcome, firstName} from './Welcome'
+import '../utils/handlers/font-handler'
 
 let posts = [
   {
@@ -16,9 +17,9 @@ let posts = [
 ]
 
 
-const getUpperName = name => {
-  if (name) {
-      return name.toUpperCase()
+const getName = (a,b) => {
+  if (a && b) {
+      return `${a} ${b}`
   }
   return 'Foreign' 
 }
@@ -26,18 +27,18 @@ const getUpperName = name => {
 //const color = 'classRedExemple';
 const color = 'classBlueExemple';
 
-const name = 'Yossef';
+const familyName = 'ben Yaakov';
 
 function App() {
   return (
     <div className={color}>
-      {firstName == "Yossef" ? <Welcome coco={getUpperName(name)} dodo='by'/> : 'By'}
+      {firstName == "Yossef" ? <Welcome name={getName(firstName, familyName)} question='how are you?'/> : 'By'}
       {posts.map((post, index) => 
-         <Welcome key={index} coco={post.id} dodo={index} />
+         <Welcome key={index} name={post.id} question={index} />
                 )
       }
       {posts.map((post, index) =>          
-         getUpperName(name)
+         getName(firstName, familyName)
                 )
       }
     </div>
